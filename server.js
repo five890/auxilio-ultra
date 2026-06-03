@@ -7,6 +7,9 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + "/public/index.html");
 });
 
-app.listen(3000, () => {
-    console.log("Servidor rodando: http://localhost:3000");
+// 🚨 ISSO AQUI É O MAIS IMPORTANTE
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log("Servidor rodando na porta " + PORT);
 });
